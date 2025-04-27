@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Entry</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      direction: ltr;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+      width: 300px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome</h1>
+  
+  <div>
+    <input type="text" id="name" placeholder="Name">
+  </div>
+  
+  <div>
+    <input type="text" id="dob" placeholder="Date of Birth">
+  </div>
+  
+  <button onclick="goToPage()">Next</button>
+
+  <script>
+    function goToPage() {
+      const name = document.getElementById('name').value.trim().toLowerCase();
+      const dob = document.getElementById('dob').value.trim();
+      
+      const validNames = ['sager', 'صقر', 'sager'];
+      const validDOBs = ['28.4.1996', '٢٨-٤-١٩٩٦', '28-4-1996', '28/4/1996'];
+
+      if (validNames.includes(name) && validDOBs.includes(dob)) {
+        window.location.href = "sec.html";
+      } else {
+        alert("Please enter a valid name and date of birth.");
+      }
+    }
+  </script>
+</body>
+</html>
